@@ -1,3 +1,3 @@
-import { somar, sub } from "./Matematica";
+import validator from 'validator';
 
-console.log(somar(1, 2));
+console.log(validator.isEmail('lucas_meyble123@htmail.com'))
