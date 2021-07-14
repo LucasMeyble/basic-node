@@ -1,4 +1,3 @@
-let nome: string = 'lucas';
-let idade: number = 222
+import { somar, sub } from "./Matematica";
 
-console.log(nome, idade)
+console.log(somar(1, 2));
