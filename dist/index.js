@@ -1,4 +1,4 @@
 "use strict";
 let nome = 'lucas';
-let idade = 21;
+let idade = 222;
 console.log(nome, idade);
