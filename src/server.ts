@@ -6,12 +6,14 @@ server.get('/', (req: Request, res: Response) => {
     res.send('alo alo caruaru')
 });
 
-server.get('/contatos', (req: Request, res: Response) => {
-    res.send('contatos')
-});
+server.get( '/noticias/:slug', (req: Request, res: Response) => {
+    let slug: string = req.params.slug
+    res.send(` noticia: ${slug} `)
+})
 
-server.get('/teste', (req: Request, res: Response) => {
-    res.send('teste')
-});
+server.get( '/voos/:voou-:destinos', (req: Request, res: Response) => {
+    let { voou, destinos } = req.params
+    res.send(` Procurando voos de ${voou} até ${destinos}`)
+})
 
 server.listen(3000)
