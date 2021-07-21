@@ -1,19 +1,10 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import { router } from './routes';
+import { routerPainel } from './routes/painel';
 
 const server = express()
 
-server.get('/', (req: Request, res: Response) => {
-    res.send('alo alo caruaru')
-});
-
-server.get( '/noticias/:slug', (req: Request, res: Response) => {
-    let slug: string = req.params.slug
-    res.send(` noticia: ${slug} `)
-})
-
-server.get( '/voos/:voou-:destinos', (req: Request, res: Response) => {
-    let { voou, destinos } = req.params
-    res.send(` Procurando voos de ${voou} até ${destinos}`)
-})
+server.use('/', router)
+server.use('/painel', routerPainel)
 
 server.listen(3000)
