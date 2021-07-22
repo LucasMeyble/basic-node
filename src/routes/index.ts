@@ -9,4 +9,4 @@ router.get('/', (req: Request, res: Response) => {
 router.get( '/voos/:voou-:destinos', (req: Request, res: Response) => {
     let { voou, destinos } = req.params
     res.send(` Procurando voos de ${voou} até ${destinos}`)
-})
+});

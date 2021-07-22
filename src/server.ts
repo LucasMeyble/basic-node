@@ -1,10 +1,15 @@
-import express from 'express';
+import express, {Request, Response} from 'express';
 import { router } from './routes';
 import { routerPainel } from './routes/painel';
 
-const server = express()
+const server = express();
 
-server.use('/', router)
-server.use('/painel', routerPainel)
+server.use('/', router);
+server.use('/painel', routerPainel);
 
-server.listen(3000)
+//se nenhum dos use la de cima for ultilizado esse sera feito.
+server.use((req: Request, res: Response) => {
+    res.status(404).send('Pagina não encontrada!')
+})
+
+server.listen(3000);

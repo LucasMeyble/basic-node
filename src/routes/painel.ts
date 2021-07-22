@@ -9,4 +9,4 @@ routerPainel.get('/', (req: Request, res: Response) => {
 routerPainel.get( '/noticias/:slug', (req: Request, res: Response) => {
     let slug: string = req.params.slug
     res.send(` noticia: ${slug} `)
-})
+});
