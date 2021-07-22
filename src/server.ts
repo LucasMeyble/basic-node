@@ -1,8 +1,11 @@
 import express, {Request, Response} from 'express';
 import { router } from './routes';
+import path from 'path';
 import { routerPainel } from './routes/painel';
 
 const server = express();
+
+server.use(express.static(path.join(__dirname, '../public')))
 
 server.use('/', router);
 server.use('/painel', routerPainel);
